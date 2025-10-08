@@ -12,43 +12,31 @@ Kubernetes environments are highly dynamic and often lead to significant financi
 
 ## Visual Introduction
 
-### 1. High-Level Architecture
-
-The following image illustrates the architecture of KubeOps AI, showcasing its integration with Kubernetes, Kubecost, Prometheus, and the AI-powered backend:
-
-<img width="1482" height="856" alt="KubeOps AI Architecture Diagram" src="https://github.com/user-attachments/assets/f842d32c-d54c-4a18-9d24-b5ef5d1afe84" />
-
----
-
-### 2. Main Dashboard UI
-
+### 1. Main Dashboard UI
 This image demonstrates the main dashboard interface, where users can view cost-saving insights, pending actions, and recent optimization activities:
+
+
 
 <img width="1438" height="373" alt="KubeOps AI Dashboard" src="https://github.com/user-attachments/assets/00a4abd1-31a9-43f7-bae2-5fa2c8421255" />
 
 ---
 
-### 3. Action Approval Workflow
+### 2. Action Approval Workflow
 
 Shown below is the "Action Approval" section, allowing users to approve or reject recommended optimizations and view their estimated impact:
+<img width="1508" height="830" alt="Reports Page" src="https://github.com/user-attachments/assets/d886bdd3-5751-46f9-b2ad-3b7158a55c43" />
+
+
+
+---
+
+### 3. Reports and Historical Analysis
+
+This image highlights the reporting page, where detailed histories of past analysis runs and actions are available for review:
+<img width="1482" height="856" alt="KubeOps AI Architecture Diagram" src="https://github.com/user-attachments/assets/f842d32c-d54c-4a18-9d24-b5ef5d1afe84" />
 
 <img width="1513" height="812" alt="Action Approval UI" src="https://github.com/user-attachments/assets/97d651f2-0003-4af1-959d-9afe5b3a7e92" />
 
----
-
-### 4. Reports and Historical Analysis
-
-This image highlights the reporting page, where detailed histories of past analysis runs and actions are available for review:
-
-<img width="1508" height="830" alt="Reports Page" src="https://github.com/user-attachments/assets/d886bdd3-5751-46f9-b2ad-3b7158a55c43" />
-
----
-
-### 5. Node and Resource Optimization
-
-Below is an example of the node optimization section, identifying underutilized nodes and resources for consolidation or cleanup:
-
-<img width="1508" height="830" alt="Node Optimization" src="https://github.com/user-attachments/assets/bb7fdcf0-79f8-483d-8d87-1eb18ba6daef" />
 
 ---
 
@@ -220,3 +208,4 @@ kubectl apply -f kubernetes_manifests.yaml
 ```
 
 ---
+
