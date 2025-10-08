@@ -4,6 +4,9 @@ KubeOps AI is a production-grade, autonomous agent that leverages AI to analyze,
 
 <img width="1438" height="373" alt="image" src="https://github.com/user-attachments/assets/00a4abd1-31a9-43f7-bae2-5fa2c8421255" />
 <img width="1513" height="812" alt="image" src="https://github.com/user-attachments/assets/97d651f2-0003-4af1-959d-9afe5b3a7e92" />
+<img width="1508" height="830" alt="image" src="https://github.com/user-attachments/assets/d886bdd3-5751-46f9-b2ad-3b7158a55c43" />
+<img width="1508" height="830" alt="image" src="https://github.com/user-attachments/assets/bb7fdcf0-79f8-483d-8d87-1eb18ba6daef" />
+
 
 
 
@@ -149,3 +152,4 @@ Update kubernetes_manifests.yaml: Change the image: field to point to the image 
 Apply to your Cloud Cluster:
 
 kubectl apply -f kubernetes_manifests.yaml
+
