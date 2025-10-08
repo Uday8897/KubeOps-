@@ -1,0 +1,13 @@
+# service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: optimizer-agent-service
+  namespace: optimizer-agent
+spec:
+  selector:
+    app: k8s-optimizer-agent
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8000

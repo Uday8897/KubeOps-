@@ -1,0 +1,39 @@
+# rbac.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: optimizer-agent-sa
+  namespace: optimizer-agent
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: optimizer-agent-role
+rules:
+- apiGroups: [""] # Core API group
+  resources: ["pods", "nodes", "persistentvolumeclaims"]
+  verbs: ["get", "list", "watch", "delete", "patch"]
+- apiGroups: [""]
+  resources: ["pods/eviction"]
+  verbs: ["create"]
+- apiGroups: ["autoscaling"]
+  resources: ["horizontalpodautoscalers"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["apps"]
+  resources: ["deployments", "statefulsets", "daemonsets", "replicasets"]
+  verbs: ["get", "list", "watch"]
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: optimizer-agent-binding
+subjects:
+- kind: ServiceAccount
+  name: optimizer-agent-sa
+  namespace: optimizer-agent
+roleRef:
+  kind: ClusterRole
+  name: optimizer-agent-role
+  apiGroup: rbac.authorization.k8s.io

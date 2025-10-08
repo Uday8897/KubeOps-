@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wasteful-nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wasteful-nginx
+  template:
+    metadata:
+      labels:
+        app: wasteful-nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        resources:
+          requests:
+            cpu: "1000m" # Requests 1 full CPU core
+            memory: "1Gi"  # Requests 1 GiB of Memory

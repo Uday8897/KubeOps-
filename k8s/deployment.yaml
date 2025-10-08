@@ -1,0 +1,46 @@
+# deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-optimizer-agent
+  namespace: optimizer-agent
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: k8s-optimizer-agent
+  template:
+    metadata:
+      labels:
+        app: k8s-optimizer-agent
+    spec:
+      serviceAccountName: optimizer-agent-sa
+      containers:
+      - name: agent
+        image: uday8897/k8s-optimizer-agent:v1.0 
+        ports:
+        - containerPort: 8000
+        env:
+        - name: PROMETHEUS_URL
+          value: "http://prometheus-kube-prometheus-prometheus.monitoring.svc.cluster.local"
+        - name: OPENCOST_URL
+          value: "http://opencost.opencost.svc.cluster.local:9090"
+        - name: GROQ_MODEL_NAME
+          value: "openai/gpt-oss-20b" # Or "mixtral-8x7b-32768", etc.
+        - name: GROQ_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: optimizer-secrets
+              key: GROQ_API_KEY
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 15
+          periodSeconds: 20
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 30
+          periodSeconds: 30
