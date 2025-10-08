@@ -15,9 +15,9 @@ Kubernetes environments are highly dynamic and often lead to significant financi
 ### 1. Main Dashboard UI
 This image demonstrates the main dashboard interface, where users can view cost-saving insights, pending actions, and recent optimization activities:
 
+<img width="1482" height="856" alt="KubeOps AI Architecture Diagram" src="https://github.com/user-attachments/assets/f842d32c-d54c-4a18-9d24-b5ef5d1afe84" />
 
 
-<img width="1438" height="373" alt="KubeOps AI Dashboard" src="https://github.com/user-attachments/assets/00a4abd1-31a9-43f7-bae2-5fa2c8421255" />
 
 ---
 
@@ -33,7 +33,8 @@ Shown below is the "Action Approval" section, allowing users to approve or rejec
 ### 3. Reports and Historical Analysis
 
 This image highlights the reporting page, where detailed histories of past analysis runs and actions are available for review:
-<img width="1482" height="856" alt="KubeOps AI Architecture Diagram" src="https://github.com/user-attachments/assets/f842d32c-d54c-4a18-9d24-b5ef5d1afe84" />
+<img width="1438" height="373" alt="KubeOps AI Dashboard" src="https://github.com/user-attachments/assets/00a4abd1-31a9-43f7-bae2-5fa2c8421255" />
+
 
 <img width="1513" height="812" alt="Action Approval UI" src="https://github.com/user-attachments/assets/97d651f2-0003-4af1-959d-9afe5b3a7e92" />
 
@@ -208,4 +209,5 @@ kubectl apply -f kubernetes_manifests.yaml
 ```
 
 ---
+
 
